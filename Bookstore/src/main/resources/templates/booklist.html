@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-
 <body>
 
-	<div>Books</div>
+	<h1>Books</h1>
 	
-	<tr th:each = "book : ${books}">
-    		<td th:text="${book.title.isbn.publicationYear}"></td>
-    		    <br>		
-    	</tr>
-	</body>
+	
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Author</th>
+				<th>Title</th>
+				<th>Year</th>
+				<th>ISBN</th>
+				<th>Price</th>
+				<th>Category</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="book : ${bookList}">
+				<td><span th:text="${book.author}"> Author </span></td>
+				<td><span th:text="${book.title}"> Title </span></td>
+				<td><span th:text="${book.publicationYear}"> Year </span></td>
+				<td><span th:text="${book.isbn}"> ISBN </span></td>
+				<td><span th:text="${book.price}"> Price </span></td>
+				
+					
+			</tr>
+		</tbody>
+	</table>
+
+</body>
 
 </html>
