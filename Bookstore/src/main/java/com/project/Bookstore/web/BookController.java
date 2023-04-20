@@ -23,6 +23,7 @@ public class BookController {
 	@Autowired
 	private BookRepository repository;
 	
+	@Autowired
 	private CategoryRepository crepository;
 	
 	@RequestMapping(value="/booklist", method=RequestMethod.GET)

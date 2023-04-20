@@ -41,11 +41,11 @@ public class Category {
 		this.books = books;
 	}
 	
-	public long getCategoryId() {
+	public Long getCategoryId() {
 		return categoryId;
 	}
 
-	public void setCategoryId(long categoryId) {
+	public void setCategoryId(Long categoryId) {
 		this.categoryId = categoryId;
 	}
 
