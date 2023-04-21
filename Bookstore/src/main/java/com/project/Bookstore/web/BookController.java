@@ -2,6 +2,7 @@ package com.project.Bookstore.web;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +31,16 @@ public class BookController {
 	public String bookList(Model model) {
 		model.addAttribute("books", repository.findAll());
 		return "bookList";
+	}
+	@GetMapping(value = "/books")
+	public @ResponseBody List<Book> bookListRest() {
+		return (List<Book>) repository.findAll();
+	}
+
+	
+	@GetMapping(value="/book/{id}")
+	public @ResponseBody Optional<Book> findBookRest(@PathVariable("id") Long bookId) {
+		return repository.findById(bookId);
 	}
 	@GetMapping(value = "/add")
 	public String addBook(Model model) {
