@@ -32,6 +32,7 @@ public class BookstoreApplication {
 	CommandLineRunner demo(BookRepository repository, CategoryRepository crepository, UserRepository urepository) {
 		return (args) -> {
 			
+			
 			Category category1 = new Category("Horror");
 			crepository.save(category1);
 			Category category2 = new Category("Action");
@@ -43,7 +44,7 @@ public class BookstoreApplication {
 			repository.save(book);
 			
 			User user1 = new User("user", "USER", "$2a$10$sTaVf9alFVduKKeoj5d3ie.fO9UJET1FVQ0H1vRSKxxtN215C8y7u", "user@gmail.com");
-			User user2 = new User("admin", "Admin", "$2a$10$U0F0R3/Iczfxo8.D5csAde8phvS9j3PJoOOZIs2QV.MJ5cGLM3bk6", "admin@gmail.com");
+			User user2 = new User("admin", "ADMIN", "$2a$10$U0F0R3/Iczfxo8.D5csAde8phvS9j3PJoOOZIs2QV.MJ5cGLM3bk6", "admin@gmail.com");
 			urepository.save(user1);
 			urepository.save(user2);
 			
